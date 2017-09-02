@@ -1,0 +1,12 @@
+# Bower dependencies
+bower_components
+
+# Node dependencies
+node_modules
+
+# Dist files
+dist
+
+# OS cache files
+.DS_Store
+Thumbs.db
