@@ -72,6 +72,12 @@ module.exports = function(Grunt)
                 src: "**/*.html",
                 dest: (distPath + "/templates/pages")
             },
+            images: {
+                expand: true,
+                cwd: (sourcePath + "/images"),
+                src: ["**/*.jpg", "**/*.png"],
+                dest: (distPath + "/images")
+            },
             vendor: {
                 expand: true,
                 cwd: (bowerPath + "/components-font-awesome/fonts"),
@@ -96,6 +102,6 @@ module.exports = function(Grunt)
     Grunt.loadNpmTasks("grunt-contrib-watch");
     Grunt.loadNpmTasks("grunt-concat-css");
 
-    Grunt.registerTask("default", ["concat:app", "less:app", "copy:components_templates", "copy:pages_templates"]);
+    Grunt.registerTask("default", ["concat:app", "less:app", "copy:components_templates", "copy:pages_templates", "copy:images"]);
     Grunt.registerTask("vendor", ["concat:vendor", "concat_css:vendor", "copy:vendor"]);
 }
