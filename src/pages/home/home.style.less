@@ -3,7 +3,7 @@
     background: url(../images/pedro-cellis-banner.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 550px;  
+    height: 550px; 
 }
 
 .lst-biography-section {
@@ -41,6 +41,11 @@
 .lst-faq-section {
     .lst-content-section;
     text-align: center;
+
+    // Removes bottom separator
+    &::after {
+        display: none;
+    }
 }
 
 .lst-social-section {
