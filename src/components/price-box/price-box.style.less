@@ -1,4 +1,39 @@
 .lst-price-box {
+    border: 1px solid #12708d;
     display: inline-block;
-    width: 33%;
+    padding: 20px;
+    width: 30%;
+
+    &:not(:last-child) {
+        margin-right: 25px;
+    }
+
+    .lst-title,
+    .lst-price,
+    .lst-description {
+        margin-bottom: 20px;
+    }
+
+    .lst-price {
+        color: #d7df36;
+        display: inline-block;
+        font-size: 65px;
+        font-weight: 700;
+    }
+
+    .lst-description {
+        color: #12708d;
+        font-size: 15px;
+    }
+
+    .lst-buy {
+        background: #d7df36;
+        color: #12708d;
+        display: inline-block;
+        font-weight: 700;
+        padding: 10px 20px;
+        text-decoration: none;
+
+        .border-radius(10px);
+    }
 }
