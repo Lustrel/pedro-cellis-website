@@ -1,13 +1,18 @@
 .lst-content-section {
     padding: 70px 20px;
+    position: relative;
 
     &::after {
         background: #022c44;
         content: '';
         display: block;
         height: 1px;
-        margin: 0 auto;
+        left: 50%;
         max-width: 620px;
+        position: absolute;
+        top: 100%;
         width: 80%;
+
+        .translate(-50%);
     }
 }
