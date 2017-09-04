@@ -4,22 +4,27 @@
  @bootstrap_path: "../bower_components/bootstrap/less";
  @project_path: "globals/less";
  
- /*
-  * Variables
-  */
+/*
+ * Variables
+ */
  @import "@{bootstrap_path}/variables.less";
  
- /*
-  * Mixins
-  */
+/*
+ * Mixins
+ */
  @import "@{bootstrap_path}/mixins.less";
  
- /*
-  * Core 
-  */
+/*
+ * Core 
+ */
  @import "@{bootstrap_path}/scaffolding.less";
 
- /*
-  * Project Pages
-  */
-@import "components/content-section/content-section.style.less"
+/*
+ * Project Globals
+ */
+@import "less/general.less";
+/*
+ * Project Pages
+ */
+@import "components/content-section/content-section.style.less";
+@import "components/top-menu/top-menu.style.less";
