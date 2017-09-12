@@ -24,12 +24,15 @@
 
     .lst-content p {
         line-height: 30px;
+        margin-bottom: 32px;
     }
 }
 
 .lst-consulting-section {
     .lst-content-section;
     text-align: center;
+
+    p { margin-bottom: 32px; }
 }
 
 .lst-prices-section {
@@ -41,6 +44,12 @@
 .lst-faq-section {
     .lst-content-section;
     text-align: center;
+
+    .lst-accordion-item .lst-title:hover {
+        color: #33bebf;
+        
+        .transition(color .2s);
+    }
 
     // Removes bottom separator
     &::after {

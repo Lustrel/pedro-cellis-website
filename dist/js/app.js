@@ -14,17 +14,47 @@ angular
 (function() {
 	angular
 		.module("Website")
-		.directive("priceBox", Directive);
+		.directive("lstAccordionItem", Directive);
 
 	function Directive() {
 		return {
 			restrict: "E",
-            templateUrl: "./dist/templates/components/price-box/price-box.template.html",
-            transclude: true,
-            replace: true,
+			templateUrl: "./dist/templates/components/accordion-item/accordion-item.template.html",
+			transclude: true,
+			replace: true,
+			scope: {
+				title: "@"
+			},
+			link: function(theScope, theElement, theAttributes){
+				var $element = $(theElement);
+				var $question = $element.find(".lst-title");
+				var $content = $element.find(".lst-content");
+
+				$content.css("display", "none");
+
+				$question.click(function(){
+					$content.slideToggle();
+				});
+			}
+		};
+	}
+})();; 
+"use strict";
+
+(function() {
+	angular
+		.module("Website")
+		.directive("lstPriceBox", Directive);
+
+	function Directive() {
+		return {
+			restrict: "E",
+			templateUrl: "./dist/templates/components/price-box/price-box.template.html",
+			transclude: true,
+			replace: true,
 			scope: {
 				title: "@",
-                price: "@",
+				price: "@",
 				description: "@",
 				featured: "@"
 			}

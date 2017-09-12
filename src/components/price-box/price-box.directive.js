@@ -3,17 +3,17 @@
 (function() {
 	angular
 		.module("Website")
-		.directive("priceBox", Directive);
+		.directive("lstPriceBox", Directive);
 
 	function Directive() {
 		return {
 			restrict: "E",
-            templateUrl: "./dist/templates/components/price-box/price-box.template.html",
-            transclude: true,
-            replace: true,
+			templateUrl: "./dist/templates/components/price-box/price-box.template.html",
+			transclude: true,
+			replace: true,
 			scope: {
 				title: "@",
-                price: "@",
+				price: "@",
 				description: "@",
 				featured: "@"
 			}
