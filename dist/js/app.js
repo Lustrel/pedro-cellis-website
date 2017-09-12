@@ -25,7 +25,8 @@ angular
 			scope: {
 				title: "@",
                 price: "@",
-                description: "@"
+				description: "@",
+				featured: "@"
 			}
 		};
 	}

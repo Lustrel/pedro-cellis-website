@@ -14,7 +14,8 @@
 			scope: {
 				title: "@",
                 price: "@",
-                description: "@"
+				description: "@",
+				featured: "@"
 			}
 		};
 	}
