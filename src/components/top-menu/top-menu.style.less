@@ -1,9 +1,9 @@
 .lst-top-menu {
     background: #fff;
-    border-top: 10px solid #022c44;
-    border-bottom: 20px solid #ededed;
-    height: 210px;
-    padding: 50px 25px;
+    border-top: 5px solid #022c44;
+    border-bottom: 10px solid #ededed;
+    height: 150px;
+    padding: 32px 25px;
 
     .lst-logo { display: inline-block; }
     .lst-logo img { height: 80px; }
@@ -18,6 +18,8 @@
     .lst-items li {
         color: #022c44;
         display: inline-block;
+
+        .transition(color .4s);
 
         &:not(:last-child) {
             margin-right: 25px;
