@@ -51,7 +51,21 @@ angular
 			restrict: "E",
 			templateUrl: "./dist/templates/components/insta-thumbs/insta-thumbs.template.html",
 			transclude: true,
-			replace: true
+			replace: true,
+			link: function(theScope, theElement){
+				var feed = new Instafeed({
+					get: "user",
+					userId: "421923937",
+					clientId: "79e905681316484b9fe108bbef5774fb",
+					accessToken: "421923937.1677ed0.8b7b578910ea4c08a063c82d882bffba",
+					target: angular.element(theElement)[0],
+					sortBy: "most-recent",
+					limit: 6,
+					template: '<a target="_blank" href="{{link}}"><img class="lst-thumb" src="{{image}}"/></a>'
+				});
+
+				feed.run();
+			}
 		};
 	}
 })();; 
@@ -84,26 +98,5 @@ angular
 		.module("Website")
 		.controller("InstaThumbsController", ["$scope", "$http", Controller]);
 
-	function Controller($scope, $http){
-		$scope.images = [];
-		
-		(function initialize(){
-			var userid = "421923937";
-			var token = "421923937.79e9056.37423ea58231407699f4980815c4cf5c";
-			$.ajax({
-				url: 'https://api.instagram.com/v1/users/' + userid + '/media/recent', // or /users/self/media/recent for Sandbox
-				dataType: 'jsonp',
-				type: 'GET',
-				data: {access_token: token, count: 5},
-				success: function(data){
-					data.data.forEach(function(picture){
-						$scope.images.push(picture);
-					});
-				},
-				error: function(data){
-					console.log(data); // send the error notifications to console
-				}
-			});
-		})();
-	}
+	function Controller($scope, $http){}
 })();

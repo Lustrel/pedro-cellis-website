@@ -17,7 +17,8 @@ module.exports = function(Grunt)
                 src: [ 
                     (bowerPath + "/jquery/dist/jquery.min.js"),
                     (bowerPath + "/angular/angular.min.js"),
-                    (bowerPath + "/angular-route/angular-route.min.js")
+                    (bowerPath + "/angular-route/angular-route.min.js"),
+                    (bowerPath + "/instafeed.js/instafeed.min.js")
                 ],
                 dest: (distJsPath + "/vendor.js")
             },

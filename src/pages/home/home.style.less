@@ -95,6 +95,11 @@
 	background: url(../images/halter-dark-bg.jpg);
 
 	.lst-social-column {
+		
+		&:not(:last-child){
+			margin-right: 50px;
+		}
+
 		.lst-title {
 			color: #d7df36;
 			font-size: 45px;
@@ -115,6 +120,11 @@
 			height: 50px;
 			padding: 15px 25px;
 			width: 100%;
+		}
+
+		.lst-thumb {
+			margin: 5px;
+			width: 30%;
 		}
 
 		@media (min-width: 769px){
