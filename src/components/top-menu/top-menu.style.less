@@ -9,10 +9,15 @@
     .lst-logo img { height: 70px; }
 
     .lst-items {
+        display: none;
         float: right;
         font-size: 18px;
         font-weight: 700;
         padding: 25px 0;
+
+        @media screen and (min-width: 768px){
+            display: inline-block;
+        }
     }
 
     .lst-items li {
