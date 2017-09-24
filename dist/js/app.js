@@ -1,14 +1,14 @@
 "use strict";
 
 angular
-    .module("Website", ["ngRoute"])
-    .config(function($routeProvider, $httpProvider){
-        var templatesPath = "./dist/templates/pages";
+	.module("Website", ["ngRoute"])
+	.config(function($routeProvider, $httpProvider){
+		var templatesPath = "./dist/templates/pages";
 
-        // Routes configuration
-        $routeProvider
-            .when("/", { templateUrl: (templatesPath + "/home/home.template.html") });
-    });; 
+		// Routes configuration
+		$routeProvider
+			.when("/", { templateUrl: (templatesPath + "/home/home.template.html") });
+	});; 
 "use strict";
 
 (function() {
@@ -124,6 +124,30 @@ angular
 				price: "@",
 				description: "@",
 				featured: "@"
+			}
+		};
+	}
+})();; 
+"use strict";
+
+(function() {
+	angular
+		.module("Website")
+		.directive("lstResponsiveMenu", Directive);
+
+	function Directive() {
+		return {
+			restrict: "E",
+			templateUrl: "./dist/templates/components/responsive-menu/responsive-menu.template.html",
+			transclude: true,
+			replace: true,
+			scope: {
+				links: "="
+			},
+			link: function($scope){
+				$scope.openMenu = function(){
+					
+				}
 			}
 		};
 	}
