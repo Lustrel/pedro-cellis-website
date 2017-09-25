@@ -1,21 +1,14 @@
 <header class="lst-top-menu">
 	<div class="lst-content-container">
 		<h1 class="lst-logo"><img src="./dist/images/pedro-cellis-logo.png" class="lst-logo"/></h1>
-		<lst-responsive-menu
-			links="[{
-				url: '#',
-				text: 'Pedro Cellis'
-			}, {
-				url: '#',
-				text: 'Treine Comigo'
-			}, {
-				url: '#',
-				text: 'Planos'
-			}, {
-				url: '#',
-				text: 'Contato'
-			}]">
-		</lst-responsive-menu>
+		<ul id="menu-items" class="lst-items">
+			<li class="lst-item"><a href="#">Pedro Cellis</a></li>
+			<li class="lst-item"><a href="#">Treine Comigo</a></li>
+			<li class="lst-item"><a href="#">Planos</a></li>
+			<li class="lst-item"><a href="#">Contato</a></li>
+		</ul>
+
+		<lst-menu-button menu="#menu-items"></lst-menu-button>
 	</div>
 </header>
 

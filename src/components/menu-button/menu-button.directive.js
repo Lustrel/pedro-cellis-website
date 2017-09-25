@@ -1,37 +1,43 @@
 "use strict";
 
 (function() {
-    angular
-        .module("Website")
-        .directive("lstMenuButton", Directive);
+	angular
+		.module("Website")
+		.directive("lstMenuButton", Directive);
 
-    function Directive() {
-        return {
-            restrict: "E",
-            templateUrl: "./dist/templates/components/menu-button/menu-button.template.html",
-            transclude: true,
-            replace: true,
-            link: function($scope){
-                console.log($scope);
-                
-                $scope.openMenu = function(){
-                    var $overlay = $("<div></div>");
-                    $overlay.css({
-                        "position": "fixed",
-                        "top": 0,
-                        "left": 0,
-                        "right": 0,
-                        "bottom": 0,
-                        "background": "rgba(0, 0, 0, .8)"
-                    });
-                    
-                    $("body").css({
-                        "overflow": "hidden"
-                    });
+	function Directive() {
+		return {
+			restrict: "E",
+			templateUrl: "./dist/templates/components/menu-button/menu-button.template.html",
+			transclude: true,
+			replace: true,
+			scope: {
+				menu: "@"
+			},
+			link: function($scope){
+				$scope.openMenu = function(){
+					var $body = $("body");
+					var $overlay = $(".lst-menu-button__overlay");
+					if(!$overlay || !$overlay.length){
+						$overlay = $('<div class="lst-menu-button__overlay"></div>');
 
-                    $("body").append($overlay);
-                };
-            }
-        };
-    }
+						var $close = $('<span class="lst-menu-button__close" ng-click="closeMenu()">X</span>');
+						$overlay.append($close);
+
+						var $menuContent = $($scope.menu);
+						$overlay.append($menuContent);
+
+						$body.append($overlay);
+					}
+
+					$overlay.css("display", "block");
+					$body.css("overflow", "hidden");
+				};
+
+				$scope.closeMenu = function(){
+					console.log("Closing menu");
+				};
+			}
+		};
+	}
 })();
