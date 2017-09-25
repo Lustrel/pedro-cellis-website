@@ -134,10 +134,17 @@
 		.lst-thumb {
 			margin: 5px;
 			width: 46%;
+
+			@media (min-width: 768px){
+				width: 29%;
+			}
 		}
 
-		@media (min-width: 769px){
+		@media (min-width: 768px){
 			display: inline-block;
+			margin-right: 29px;
+			text-align: left;
+			vertical-align: top;
 			width: 45%;
 		}
 	}
