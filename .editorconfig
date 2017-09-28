@@ -1,4 +1,4 @@
 root = true;
 
-[src/*]
+[src/*.*]
 indent_style = tab
