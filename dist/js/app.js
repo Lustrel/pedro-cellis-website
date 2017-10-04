@@ -1,7 +1,7 @@
 "use strict";
 
 angular
-	.module("Website", ["ngRoute"])
+	.module("Website", ["ngRoute", "angularModalService"])
 	.config(function($routeProvider, $httpProvider){
 		var templatesPath = "./dist/templates/pages";
 
@@ -168,4 +168,56 @@ angular
 		.controller("InstaThumbsController", ["$scope", "$http", Controller]);
 
 	function Controller($scope, $http){}
+})();
+; 
+'use strict';
+
+(function(){
+	angular
+		.module('Website')
+		.controller('ContactModalController', ['$scope', '$http', Controller]);
+
+	function Controller($scope, $http){
+		$scope.areFieldsFilled = function(){
+			return (
+				!!$scope.name &&
+				!!$scope.email &&
+				!!$scope.message
+			);
+		};
+		
+		$scope.sendEmail = function(){
+			console.log('Sending email');
+			if(!$scope.areFieldsFilled()) return false;
+			$scope.mailSent = true;
+			/*
+			$http
+				.post('/php/contato.php', {name: $scope.name, email: $scope.email, message: $scope.message})
+				.then(function(res){
+					$scope.mailSent = true;
+				});
+			*/
+		};
+	}
+})();; 
+'use strict';
+
+(function(){
+	angular
+		.module('Website')
+		.controller('HeaderController', ['$scope', 'ModalService', Controller]);
+
+	function Controller($scope, ModalService){
+		$scope.showContactModal = function(){
+			ModalService
+				.showModal({ 
+					templateUrl: 'dist/templates/pages/home/contact/contact.modal.template.html',
+					controller:  'ContactModalController' 
+				})
+				.then(function(modal){
+					console.log(modal);
+					modal.element.modal();
+				});
+		};
+	}
 })();
