@@ -15,7 +15,15 @@
 				title: "@",
 				price: "@",
 				description: "@",
-				featured: "@"
+				featured: "@",
+				code: "@"
+			},
+			link: function(theScope){
+				theScope.onBuyClick = function(){
+					console.log(theScope.code);
+					console.log('Buying');
+					PagSeguroLightbox(theScope.code);
+				}
 			}
 		};
 	}
