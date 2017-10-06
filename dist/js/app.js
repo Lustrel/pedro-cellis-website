@@ -153,7 +153,7 @@ angular
 				price: "@",
 				description: "@",
 				featured: "@",
-				link: "@"
+				code: "@"
 			},
 		};
 	}

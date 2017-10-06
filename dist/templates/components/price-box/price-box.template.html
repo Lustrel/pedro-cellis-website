@@ -4,7 +4,16 @@
 	<p class="lst-description">
 		<ng-transclude></ng-transclude>
 	</p>
+
+	<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
+		<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+		<input type="hidden" name="code" value="{{ code }}" />
+		<input type="hidden" name="iot" value="button" />
+		<input type="submit" class="lst-buy" name="submit" value="Começar sua transformação" />
+	</form>
+	<!--
 	<a href="{{link}}" target="_blank" class="lst-buy">
 		Começar minha transformação
 	</a>
+-->
 </div>
