@@ -132,9 +132,12 @@ angular
 			},
 			link: function(theScope){
 				theScope.onBuyClick = function(){
-					console.log(theScope.code);
-					console.log('Buying');
-					PagSeguroLightbox('F1F143237777E9DEE476DFAC6A32382A');
+					PagSeguroLightbox({
+						code: 'F1F143237777E9DEE476DFAC6A32382A'
+					}, {
+						success: function(transactionCode){ console.log(transactionCode); },
+						abort: function(){ console.log('Aborted'); }
+					});
 				}
 			}
 		};
