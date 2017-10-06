@@ -17,5 +17,19 @@
 					modal.element.modal();
 				});
 		};
+
+		$scope.options = [{
+			url: '#pedro-cellis',
+			label: 'Pedro Cellis'
+		}, {
+			url: '#treine-comigo',
+			label: 'Treine Comigo',
+		}, {
+			url: '#planos',
+			label: 'Planos'
+		}, {
+			label: 'Contato',
+			callback: $scope.showContactModal
+		}];
 	}
 })();

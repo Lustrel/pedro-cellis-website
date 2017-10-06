@@ -85,17 +85,20 @@ angular
 			transclude: true,
 			replace: true,
 			scope: {
-				menu: "@"
+				options: "="
 			},
-			link: function($scope){
+			link: function($scope, theElement, attrs){
+				//var menu = attrs.menu;
 				var $overlay = $(".lst-menu-button__overlay");
-				var $items = $($scope.menu).clone();
+				//var $items = $(menu).clone();
 
+				/*
 				addContentToOverlay();
 
 				function addContentToOverlay(){
 					$overlay.append($items);
 				}
+				*/
 
 				$scope.openMenu = function(){
 					console.log("Opening menu");
@@ -202,5 +205,19 @@ angular
 					modal.element.modal();
 				});
 		};
+
+		$scope.options = [{
+			url: '#pedro-cellis',
+			label: 'Pedro Cellis'
+		}, {
+			url: '#treine-comigo',
+			label: 'Treine Comigo',
+		}, {
+			url: '#planos',
+			label: 'Planos'
+		}, {
+			label: 'Contato',
+			callback: $scope.showContactModal
+		}];
 	}
 })();
