@@ -27,6 +27,7 @@ module.exports = function(Grunt)
             app: {
                 src: [ 
                     (sourcePath + "/app.module.js"),
+                    (sourcePath + "/plugins/**/*.directive.js"),
                     (sourcePath + "/components/**/*.module.js"),
                     (sourcePath + "/components/**/*.directive.js"),
                     (sourcePath + "/components/**/*.provider.js"),
@@ -36,7 +37,7 @@ module.exports = function(Grunt)
                     (sourcePath + "/globals/js/**/*.service.js"),
                     (sourcePath + "/pages/**/*.module.js"),
                     (sourcePath + "/pages/**/*.service.js"),
-                    (sourcePath + "/pages/**/*.controller.js")
+                    (sourcePath + "/pages/**/*.controller.js"),
                 ],
                 dest: (distJsPath + "/app.js")
             }

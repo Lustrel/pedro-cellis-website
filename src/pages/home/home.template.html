@@ -1,9 +1,9 @@
-<header class="lst-top-menu" ng-controller="HeaderController as controller">
+<header id="top-menu" class="lst-top-menu" ng-controller="HeaderController as controller">
 	<div class="lst-content-container">
 		<img class="lst-logo" src="./dist/images/pedro-cellis-logo.png" />
 		<ul class="lst-items">
 			<li class="lst-item" ng-repeat="option in options">
-				<a ng-if="option.url" href="{{option.url}}" ng-bind="option.label"></a>
+				<a ng-if="option.url" lst-scroll scroll-to="{{option.url}}" ng-bind="option.label"></a>
 				<a ng-if="option.callback" ng-bind="option.label" ng-click="option.callback()"></a>
 			</li>
 		</ul>
@@ -229,6 +229,15 @@
 			<input type="email" class="lst-input" placeholder="meu-email@exemplo.com"/>
 			<a ng-show="!alreadySent" class="lst-send" ng-click="sendNewsletter()">Enviar</a>
 			<a ng-show="alreadySent" class="lst-send -positive">Cadastrado com sucesso</a>
+		</div>
+	</div>
+</section>
+
+<section class="lst-footer-section">
+	<div class="lst-content-container">
+		<img class="lst-logo" src="dist/images/igor-trindade-logo.png" />
+		<div class="lst-top" lst-scroll scroll-to="#top-menu">
+			<img src="dist/images/to-top.png"/>
 		</div>
 	</div>
 </section>
